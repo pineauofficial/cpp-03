@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:19:52 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/25 13:31:27 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/25 14:06:05 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ class ClapTrap
 		int			_hit_points;
 		int         _energy_points;
 		int		 	_attack_damage;
-}
+};
 
 #endif

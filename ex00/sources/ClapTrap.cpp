@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:19:41 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/25 14:01:59 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/25 14:58:33 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ClapTrap::ClapTrap(void) {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name) _hit_points(10), _energy_points(10), _attack_damage(0){
+ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0){
 	std::cout << "ClaptTrap constructor called" << std::endl;
 }
 
@@ -29,20 +29,26 @@ ClapTrap::~ClapTrap(void) {
 	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap & operator=(ClapTrap const & rhs) {
+ClapTrap &ClapTrap::operator=(ClapTrap const & rhs) {
 	std::cout << "ClapTrap assignation operator called"<< std::endl;
 	if (this != &rhs)
 	{
 		this->_name = rhs._name;
 		this->_hit_points = rhs._hit_points;
 		this->_energy_points = rhs._energy_points;
-		this->attack_damage = rhs._attack_damage;
+		this->_attack_damage = rhs._attack_damage;
 	}
 	return (*this);
 }
 
 void	ClapTrap::attack(std::string const & target) {
-	std::cout << "ClapTrap " << this->_name << " attack " << target << ", causinng " << this->_attack_damage << " points of damage !" << std::endl;
+	if (this->_energy_points < 1)
+		std::cout << "ClapTrap " << this->_name << "can't attack because he has no energy !" << std::endl;
+	else
+	{
+		std::cout << "ClapTrap " << this->_name << " attack " << target << ", causinng " << this->_attack_damage << " points of damage !" << std::endl;
+		this->_energy_points -= 1;
+	}
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
@@ -50,10 +56,16 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
-	std::cout << "ClapTrap " << this->_name << " be repaired of " << amount << " points of damage !" << std::endl;
+	if (this->_energy_points < 1)
+		std::cout << "ClapTrap " << this->_name << "can't be repaired because he has no energy !" << std::endl;
+	else
+	{
+		std::cout << "ClapTrap " << this->_name << " be repaired of " << amount << " points of damage !" << std::endl;
+		this->_energy_points -= 1;
+	}
 }
 
-ClapTrap::std:string	getName(void) const {
+std::string ClapTrap::getName(void) const {
 	return (this->_name);
 }
 

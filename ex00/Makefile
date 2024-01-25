@@ -6,12 +6,12 @@
 #    By: pineau <pineau@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 14:17:43 by nasamadi          #+#    #+#              #
-#    Updated: 2024/01/25 14:02:40 by pineau           ###   ########.fr        #
+#    Updated: 2024/01/25 14:10:12 by pineau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ### PROGRAM ###
-NAME		= fixed
+NAME		= ClapTrap
 
 ### SOURCES ###
 SRC_DIR		= sources/
