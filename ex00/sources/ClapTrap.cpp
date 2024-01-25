@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:19:41 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/25 14:58:33 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/25 16:48:00 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,36 +63,4 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << "ClapTrap " << this->_name << " be repaired of " << amount << " points of damage !" << std::endl;
 		this->_energy_points -= 1;
 	}
-}
-
-std::string ClapTrap::getName(void) const {
-	return (this->_name);
-}
-
-int	ClapTrap::getHitPoints(void)const {
-	return (this->_hit_points);
-}
-
-int	ClapTrap::getEnergyPoints(void)const {
-	return (this->_energy_points);
-}
-
-int	ClapTrap::getAttackDamage(void)const {
-	return (this->_attack_damage);
-}
-
-void	ClapTrap::setName(std::string name) {
-	this->_name = name;
-}
-
-void	ClapTrap::setHitPoints(int hit_points) {
-	this->_hit_points = hit_points;
-}
-
-void	ClapTrap::setEnergyPoints(int energy_points) {
-	this->_energy_points = energy_points;
-}
-
-void	ClapTrap::setAttackDamage(int attack_damage) {
-	this->_attack_damage = attack_damage;
 }
