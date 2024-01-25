@@ -6,7 +6,7 @@
 #    By: pineau <pineau@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 14:17:43 by nasamadi          #+#    #+#              #
-#    Updated: 2024/01/25 14:10:12 by pineau           ###   ########.fr        #
+#    Updated: 2024/01/25 17:10:10 by pineau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ INCLUDES	= includes/
 
 SRC		=	main.cpp \
 			ClapTrap.cpp \
+			ScavTrap.cpp \
 			
 			
 			
