@@ -6,7 +6,7 @@
 #    By: pineau <pineau@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/05 14:17:43 by nasamadi          #+#    #+#              #
-#    Updated: 2024/01/24 13:32:36 by pineau           ###   ########.fr        #
+#    Updated: 2024/01/25 14:02:40 by pineau           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ OBJ_DIR		= .objs/
 INCLUDES	= includes/
 
 SRC		=	main.cpp \
+			ClapTrap.cpp \
 			
 			
 			
