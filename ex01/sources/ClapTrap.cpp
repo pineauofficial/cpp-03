@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:19:41 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/28 16:14:01 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/28 16:40:31 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ClapTrap::ClapTrap(void) {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(100), _energy_points(10), _attack_damage(0) {
+ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(100), _energy_points(50), _attack_damage(20) {
 	std::cout << "ClaptTrap constructor called" << std::endl;
 }
 
@@ -43,24 +43,31 @@ ClapTrap &ClapTrap::operator=(ClapTrap const & rhs) {
 
 void	ClapTrap::attack(std::string const & target) {
 	if (this->_energy_points < 1)
-		std::cout << "ClapTrap " << this->_name << "can't attack because he has no energy !" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " can't attack because he has no energy !" << std::endl;
+	else if (this->_hit_points < 1)
+		std::cout << "ClapTrap " << this->_name << " can't attack because he is dead !" << std::endl;
 	else
 	{
 		std::cout << "ClapTrap " << this->_name << " attack " << target << ", causinng " << this->_attack_damage << " points of damage !" << std::endl;
 		this->_energy_points -= 1;
+		this->_hit_points -= this->_attack_damage;
 	}
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
 	std::cout << "ClapTrap " << this->_name << " take " << amount << " points of damage !" << std::endl;
+	this->_hit_points -= amount;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if (this->_energy_points < 1)
 		std::cout << "ClapTrap " << this->_name << "can't be repaired because he has no energy !" << std::endl;
+	else if (this->_hit_points < 1)
+		std::cout << "ClapTrap " << this->_name << "can't be repaired because he is dead !" << std::endl;
 	else
 	{
 		std::cout << "ClapTrap " << this->_name << " be repaired of " << amount << " points of damage !" << std::endl;
 		this->_energy_points -= 1;
+		this->_hit_points += amount;
 	}
 }
