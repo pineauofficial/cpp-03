@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:19:41 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/28 15:54:44 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/28 16:14:01 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ClapTrap::ClapTrap(void) {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0) {
+ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(100), _energy_points(10), _attack_damage(0) {
 	std::cout << "ClaptTrap constructor called" << std::endl;
 }
 
