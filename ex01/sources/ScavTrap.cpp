@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:09:34 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/25 17:48:40 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/28 16:07:19 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ ScavTrap::ScavTrap(void) : ClapTrap(){
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	std::cout << "ScavTrap constructor called" << std::endl;
+	this->_hit_points = 100;
+	this->_energy_points = 50;
+	this->_attack_damage = 20;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap(src){
@@ -48,10 +51,10 @@ void	ScavTrap::guardGate(void) {
 
 void	ScavTrap::attack(std::string const & target) {
 	if (this->_energy_points < 1)
-		std::cout << "ScavTrap " << this->_name << "can't attack because he has no energy !" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " can't attack because he has no energy !" << std::endl;
 	else
 	{
 		std::cout << "ScavTrap " << this->_name << " attack " << target << ", causinng " << this->_attack_damage << " points of damage !" << std::endl;
-		this->_energy_points -= 10;
+		this->_energy_points -= 1;//passer a 10 pour la correction
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:19:41 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/25 17:51:15 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/28 15:54:44 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ClapTrap::ClapTrap(void) {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(100), _energy_points(50), _attack_damage(20) {
+ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0) {
 	std::cout << "ClaptTrap constructor called" << std::endl;
 }
 
@@ -64,35 +64,3 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		this->_energy_points -= 1;
 	}
 }
-
-// std::string ClapTrap::getName(void) const {
-// 	return (this->_name);
-// }
-
-// int	ClapTrap::getHitPoints(void)const {
-// 	return (this->_hit_points);
-// }
-
-// int	ClapTrap::getEnergyPoints(void)const {
-// 	return (this->_energy_points);
-// }
-
-// int	ClapTrap::getAttackDamage(void)const {
-// 	return (this->_attack_damage);
-// }
-
-// void	ClapTrap::setName(std::string name) {
-// 	this->_name = name;
-// }
-
-// void	ClapTrap::setHitPoints(int hit_points) {
-// 	this->_hit_points = hit_points;
-// }
-
-// void	ClapTrap::setEnergyPoints(int energy_points) {
-// 	this->_energy_points = energy_points;
-// }
-
-// void	ClapTrap::setAttackDamage(int attack_damage) {
-// 	this->_attack_damage = attack_damage;
-// }

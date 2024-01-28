@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:19:28 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/25 18:00:08 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/28 16:06:10 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 int main(void)
 {
+	ClapTrap clap("ClapTest");
 	ScavTrap clav("ClavTest");
+	std::cout << std::endl;
 	ScavTrap clav2(clav);
 	ScavTrap clav3;
 
@@ -23,11 +25,10 @@ int main(void)
 	
 	std::cout << "---------------------" << std::endl;
 	
-	for (int i = 0; i < 9; i++)
+	clap.attack("target");
+	for (int i = 0; i < 6; i++)
 		clav.attack("target");
-	clav.takeDamage(10);
-	clav.beRepaired(10);
-	clav.attack("target");
-	clav.beRepaired(10);
+    clav.guardGate();
+	std::cout << std::endl;
 	return (0);
 }
