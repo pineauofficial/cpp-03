@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 15:46:45 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/27 16:28:00 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/28 16:21:07 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ FragTrap::FragTrap(void) {
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	std::cout << "FragTrap constructor called" << std::endl;
+	this->_hit_points = 100;
+	this->_energy_points = 100;
+	this->_attack_damage = 30;
 }
 
 FragTrap::FragTrap(FragTrap const & src) : ClapTrap(src){
@@ -45,14 +48,3 @@ FragTrap &FragTrap::operator=(FragTrap const & rhs) {
 void	FragTrap::highFivesGuys(void) {
 	std::cout << "FragTrap " << this->_name << " want high fives" << std::endl;
 }
-
-void	FragTrap::attack(std::string const & target) {
-	if (this->_energy_points < 1)
-		std::cout << "FragTrap " << this->_name << "can't attack because he has no energy !" << std::endl;
-	else
-	{
-		std::cout << "FragTrap " << this->_name << " attack " << target << ", causinng " << this->_attack_damage << " points of damage !" << std::endl;
-		this->_energy_points -= 1;
-	}
-}
-

@@ -6,7 +6,7 @@
 /*   By: pineau <pineau@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 15:43:56 by pineau            #+#    #+#             */
-/*   Updated: 2024/01/27 15:44:54 by pineau           ###   ########.fr       */
+/*   Updated: 2024/01/28 16:20:00 by pineau           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 class FragTrap : public ClapTrap {
 	public:
-		ScavTrap(void);
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const & src);
-		ScavTrap & operator=(ScavTrap const & rhs);
-		~ScavTrap(void);
+		FragTrap(void);
+		FragTrap(std::string name);
+		FragTrap(FragTrap const & src);
+		FragTrap & operator=(FragTrap const & rhs);
+		~FragTrap(void);
 		
-		// void	attack(std::string const & target);
+		
 		void	highFivesGuys(void);
 	private:
 
